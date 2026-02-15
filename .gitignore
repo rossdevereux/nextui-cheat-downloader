@@ -1,0 +1,17 @@
+# Test Environment
+test_env/
+
+# Logs
+*.log
+
+# Editor/IDE
+.vscode/
+
+# PowerShell
+*.ps1xml
+*.psd1
+*.psm1
+
+# System
+Thumbs.db
+Desktop.ini
