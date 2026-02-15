@@ -1,5 +1,6 @@
 # Test Environment
 test_env/
+test_env_batch/
 
 # Logs
 *.log

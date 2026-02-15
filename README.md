@@ -1,6 +1,12 @@
 # Cheat Downloader
 
-A PowerShell utility to automatically find and organize cheat files (`.cht`) for your ROM collection. This tool is designed to work with cheat databases like the [libretro-database](https://github.com/libretro/libretro-database).
+# Cheat Downloader
+
+A PowerShell utility to automatically find and organize cheat files (`.cht`) for your ROM collection.
+
+> **Note**: This tool was specifically designed to help sort and match cheats for all ROMs on a **NextUI** SD card, automatically handling the folder structures and naming conventions used by the device.
+
+This tool is designed to work with cheat databases like the [libretro-database](https://github.com/libretro/libretro-database).
 
 ## Features
 
@@ -40,6 +46,25 @@ A PowerShell utility to automatically find and organize cheat files (`.cht`) for
     -CheatPath "C:\Emulation\libretro-database\cht\Nintendo - Nintendo Entertainment System" `
     -OutputPath "C:\Emulation\Cheats\NES" `
     -SkipExisting
+```
+
+### Process Entire Collection (Batch Mode)
+
+You can process your entire ROM collection (all consoles) at once using the `process-collection.ps1` script. This script automatically detects the console from the folder name (e.g. `Super Nintendo (SFC)`) and finds the corresponding cheat folder.
+
+```powershell
+.\process-collection.ps1 -RomRootPath "path\to\Roms" -CheatPath "path\to\Cheats_DB" [-OutputRootPath "path\to\Output"] [-SkipExisting]
+```
+
+| Parameter | Description |
+| :--- | :--- |
+| `RomRootPath` | The root folder containing all your console subfolders (e.g. `E:\Roms`). |
+| `CheatPath` | The root folder of the cheat database (e.g. `C:\libretro-database\cht`). |
+| `OutputRootPath` | (Optional) Root folder for output. Defaults to `..\Cheats` relative to RomRootPath. |
+
+**Example:**
+```powershell
+.\process-collection.ps1 -RomRootPath "E:\Roms" -CheatPath "C:\libretro-database\cht"
 ```
 
 ## Testing
